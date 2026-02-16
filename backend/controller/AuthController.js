@@ -1,6 +1,6 @@
 const User = require('../Model/User');
 const createError = require('http-errors');
-const { signAccessToken, signRefreshToken } = require('../Middlewares/JWT');
+const { signAccessToken, signRefreshToken } = require('../MiddlewareS/JWT');
 
 /**
  * User registration controller

@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     minlength: [8, 'Password must be at least 8 characters long']
   }
 }, {
-  timestamps: true // Automatically create createdAt and updatedAt fields
+  timestamps: true 
 });
 
 // Virtual for user's full name
@@ -63,9 +63,7 @@ userSchema.methods.toJSON = function() {
   return userObject;
 };
 
-// Create the model from the schema
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
 
-// Removed duplicate schema and model declaration

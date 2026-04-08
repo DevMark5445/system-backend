@@ -1,13 +1,13 @@
-const User = require('../Model/User');
+const User = require ('../Model/User');
 const createError = require('http-errors');
-const { signAccessToken, signRefreshToken } = require('../MiddlewareS/JWT');
+const { signAccessToken, signRefreshToken } = require ('../MiddlewareS/JWT');
 
 /**
  * User registration controller
  */
 const register = async (req, res, next) => {
   try {
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email, phoneNumber, password } = req.body;
 
     // Check if email already exists
     const emailExists = await User.findOne({ email });
@@ -20,6 +20,7 @@ const register = async (req, res, next) => {
       firstName,
       lastName,
       email,
+      phoneNumber,
       password,
       role: 'user' // Default role
     });

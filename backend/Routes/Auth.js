@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const authController = require('../controller/AuthController');
-const { verifyAccessToken } = require('../MiddlewareS/JWT');
+const { verifyAccessToken } = require('../Middlewares/JWT');
 
 // Registration and authentication routes
 router.post('/signup', authController.register);
